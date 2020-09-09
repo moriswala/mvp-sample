@@ -1,4 +1,4 @@
-package com.moriswala.mvp.model;
+package com.moriswala.mvp.api.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

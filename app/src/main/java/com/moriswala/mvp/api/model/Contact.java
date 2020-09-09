@@ -1,4 +1,4 @@
-package com.moriswala.mvp.model;
+package com.moriswala.mvp.api.model;
 
 import java.io.Serializable;
 import java.util.List;

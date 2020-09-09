@@ -1,3 +1,35 @@
 <resources>
-    <string name="app_name">mvp</string>
+    <string name="app_name">MVP-Moriswala</string>
+    <!--<string name="base_url">https://api.themoviedb.org/</string>-->
+    <string name="base_url">https://raw.githubusercontent.com/</string>
+    <string name="web_url">https://www.themoviedb.org/movie/</string>
+    <string name="web_title">Book a Movie</string>
+    <string name="api_key">3fa9058382669f72dcb18fb405b7a831</string>
+    <string name="generic_error">Oops! Something went wrong,\nPlease try again later...</string>
+    <string name="book_the_movie_button">Book the Movie</string>
+    <string name="name">Name</string>
+    <string name="overview_header">Overview</string>
+    <string name="duration_header">Duration</string>
+    <string name="language_header">Language</string>
+    <string name="party">Party</string>
+    <string name="role">Role</string>
+    <string name="link">Link</string>
+    <string name="admin">Admin</string>
+    <string name="product">Product</string>
+    <string name="website">Website</string>
+    <string name="sortName">Sort Name</string>
+    <string name="gender">Gender</string>
+    <string name="endDate">End Date</string>
+    <string name="birthday">Birthday</string>
+    <string name="office">Office</string>
+    <string name="address">Address</string>
+    <string name="call">Call</string>
+    <string name="SMS">SMS</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
+
+    <plurals name="duration">
+        <item quantity="one">%d minute</item>
+        <item quantity="other">%1$d minutes</item>
+    </plurals>
 </resources>
