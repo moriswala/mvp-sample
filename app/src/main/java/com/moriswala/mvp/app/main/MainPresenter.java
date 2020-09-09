@@ -67,41 +67,12 @@ public class MainPresenter implements MainContract.Presenter {
 //        getContacts(false, page);
     }
 
-//    private void getContacts(final boolean isRefresh) {
-//        Call<List<Contact>> call = apiService.getContacts();
-//        call.enqueue(new Callback<List<Contact>>() {
-//            @Override
-//            public void onResponse(Call<List<Contact>> call, Response<List<Contact>> response) {
-//                if (response.isSuccessful()) {
-//                    view.showContacts(response.body(), isRefresh);
-//                } else {
-//                    view.showError();
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<List<Contact>> call, Throwable t) {
-//                view.showError();
-//            }
-//        });
-//    }
-
     private void getContactsRx(final boolean isRefresh) {
-//        disposable.add(apiService.getContactsRx().subscribeOn(Schedulers.io())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe((contacts, throwable) -> {
-//                    if(throwable!=null){
-//                        view.showError();
-//                    }else{
-//                        view.showContacts(contacts, isRefresh);
-//                    }
-//                }));
-
         disposable.add(apiService.getContactsRx()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .map(unsortedList -> {
-                    List<Contact> sortedList = new ArrayList<Contact>(unsortedList);
+                .map(resp -> {
+                    List<Contact> sortedList = new ArrayList<Contact>(resp.getContacts());
                     Collections.sort(sortedList, new ContactLastNameComparator.LastNameComparator());
                     return sortedList;
                 })
@@ -120,8 +91,8 @@ public class MainPresenter implements MainContract.Presenter {
 
             @Override
             public int compare(Contact contact1, Contact contact2) {
-                final char field1 = contact1.getLastName().charAt(0);
-                final char field2 = contact2.getLastName().charAt(0);
+                final char field1 = contact1.getPerson().getLastname().charAt(0);
+                final char field2 = contact2.getPerson().getLastname().charAt(0);
                 return Character.valueOf(field1).compareTo(Character.valueOf(field2));
             }
         }

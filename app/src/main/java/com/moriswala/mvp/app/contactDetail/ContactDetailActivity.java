@@ -40,7 +40,7 @@ public class ContactDetailActivity extends AppCompatActivity implements ContactD
     TextView textLink;
     @BindView(R.id.textRole)
     TextView textRole;
-    @BindView(R.id.textAdmin)
+    @BindView(R.id.textParty)
     TextView textAdmin;
     @BindView(R.id.textProduct)
     TextView textProduct;
@@ -122,25 +122,25 @@ public class ContactDetailActivity extends AppCompatActivity implements ContactD
 
     @Override
     public void showContact(Contact contact) {
-        setTitle(contact.getBioguide());
+        setTitle(contact.getPerson().getBioguideid());
         int resourceId = Utils.getImageResourceId(contact);
 
         if (resourceId != -1) {
             imageView.setImageResource(resourceId);
         }
-        textName.setText(contact.getName());
-        textLink.setText(contact.getContactPage());
+        textName.setText(Utils.formateFullName(contact));
+        textLink.setText(contact.getPerson().getLink());
         textWebsite.setText(contact.getWebsite());
         textPersonName.setText(contact.getParty());
-        textRole.setText(contact.getBiography());
-        textAdmin.setText(contact.getBioguide());
-        textAddress.setText(contact.getAddressComplete());
-        textOffice.setText(contact.getEnteredOffice());
-        textPersonName.setText(contact.getName());
-        textBirthday.setText(contact.getDateOfBirth());
-        textEndDate.setText(contact.getTermEnd());
-        textGender.setText(contact.getGender());
-        textSortName.setText(contact.getNameSlug());
+        textRole.setText(getString(R.string.bioguidId));
+        textAdmin.setText(contact.getPerson().getBioguideid());
+        textAddress.setText(contact.getExtra().getAddress());
+        textOffice.setText(contact.getExtra().getOffice());
+        textPersonName.setText(contact.getPerson().getName());
+        textBirthday.setText(contact.getPerson().getBirthday());
+        textEndDate.setText(contact.getEnddate());
+        textGender.setText(contact.getPerson().getGender());
+        textSortName.setText(contact.getPerson().getSortname());
         textWebsite.setText(contact.getWebsite());
         textPhone.setText(contact.getPhone());
         loadingView.setVisibility(View.GONE);

@@ -12,11 +12,17 @@ public class Utils {
 
         if (contact.getParty() != null && !contact.getParty().isEmpty()) {
             if(contact.getParty().equals("republican")){
-                return R.drawable.img_republican;
+                return R.drawable.republican_logo;
             }else{
-                return R.drawable.img_democrat;
+                return R.drawable.democrat_logo;
             }
         }
         return -1;
     }
+
+    public static String formateFullName(Contact contact) {
+        return contact.getPerson().getFirstname() + " "+ contact.getPerson().getLastname();
+    }
+
+
 }

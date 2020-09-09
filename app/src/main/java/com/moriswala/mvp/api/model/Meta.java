@@ -3,7 +3,9 @@ package com.moriswala.mvp.api.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Meta {
+import java.io.Serializable;
+
+public class Meta implements Serializable {
 
     @SerializedName("limit")
     @Expose

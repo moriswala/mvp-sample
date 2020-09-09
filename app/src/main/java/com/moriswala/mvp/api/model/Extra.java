@@ -4,7 +4,9 @@ package com.moriswala.mvp.api.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Extra {
+import java.io.Serializable;
+
+public class Extra implements Serializable {
 
     @SerializedName("address")
     @Expose

@@ -1,6 +1,7 @@
 package com.moriswala.mvp.api;
 
 import com.moriswala.mvp.api.model.Contact;
+import com.moriswala.mvp.api.model.ContactResp;
 
 import java.util.List;
 
@@ -16,7 +17,7 @@ public interface ApiService {
 //    @GET("CivilServiceUSA/us-senate/master/us-senate/data/us-senate.json")
 //    Call<List<Contact>> getContacts();
 
-    @GET("/contacts")
-    Single<List<Contact>> getContactsRx();
+    @GET("/moriswala/moriswala.github.io/master/contacts.json")
+    Single<ContactResp> getContactsRx();
 
 }

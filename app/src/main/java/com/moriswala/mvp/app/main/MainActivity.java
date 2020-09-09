@@ -30,7 +30,7 @@ import static com.moriswala.mvp.app.contactDetail.ContactDetailActivity.CONTACT;
 
 public class MainActivity extends AppCompatActivity implements
         MainContract.View,
-        SwipeRefreshLayout.OnRefreshListener, EndlessScrollListener.ScrollToBottomListener, com.polbins.thecontactdb.app.main.ContactsAdapter.ItemClickListener {
+        SwipeRefreshLayout.OnRefreshListener, EndlessScrollListener.ScrollToBottomListener, ContactsAdapter.ItemClickListener {
     private static final String TAG = "Main";
 
     @Inject
@@ -44,8 +44,7 @@ public class MainActivity extends AppCompatActivity implements
     View errorView;
     @BindView(R.id.progressBar)
     View loadingView;
-
-    private com.polbins.thecontactdb.app.main.ContactsAdapter contactsAdapter;
+    private ContactsAdapter contactsAdapter;
     private EndlessScrollListener endlessScrollListener;
 
     @Override
@@ -109,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void showContacts(List<Contact> contacts, boolean isRefresh) {
         if (contactsAdapter == null) {
-            contactsAdapter = new com.polbins.thecontactdb.app.main.ContactsAdapter(contacts, this, this);
+            contactsAdapter = new ContactsAdapter(contacts, this, this);
             contentView.setAdapter(contactsAdapter);
         } else {
             if (isRefresh) {

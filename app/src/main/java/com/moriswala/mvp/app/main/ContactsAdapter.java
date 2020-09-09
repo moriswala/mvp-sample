@@ -1,7 +1,7 @@
 package com.moriswala.mvp.app.main;
 
 import android.app.Activity;
-import androidx.annotation.NonNull;
+
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -57,9 +57,9 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
             holder.imageView.setImageResource(resourceId);
         }
 
-        holder.popularityTextView.setText(contact.getName());
-        holder.titleTextView.setText(contact.getParty());
+        holder.textContactName.setText(Utils.formateFullName(contact));
         holder.textParty.setText(contact.getParty());
+        holder.textDescription.setText(contact.getDescription());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,11 +91,11 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
         View itemView;
         @BindView(R.id.imageView)
         ImageView imageView;
-        @BindView(R.id.popularityTextView)
-        TextView popularityTextView;
-        @BindView(R.id.titleTextView)
-        TextView titleTextView;
-        @BindView(R.id.party)
+        @BindView(R.id.textContactName)
+        TextView textContactName;
+        @BindView(R.id.textDescription)
+        TextView textDescription;
+        @BindView(R.id.textParty)
         TextView textParty;
 
         ViewHolder(View itemView) {
