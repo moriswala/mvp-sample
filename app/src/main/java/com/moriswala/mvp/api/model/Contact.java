@@ -8,9 +8,6 @@ import java.util.List;
 
 public class Contact implements Serializable {
 
-    @SerializedName("caucus")
-    @Expose
-    private java.lang.Object caucus;
     @SerializedName("congress_numbers")
     @Expose
     private List<Integer> congressNumbers = null;
@@ -22,16 +19,13 @@ public class Contact implements Serializable {
     private String description;
     @SerializedName("district")
     @Expose
-    private java.lang.Object district;
+    private String district;
     @SerializedName("enddate")
     @Expose
     private String enddate;
     @SerializedName("extra")
     @Expose
     private Extra extra;
-    @SerializedName("leadership_title")
-    @Expose
-    private java.lang.Object leadershipTitle;
     @SerializedName("party")
     @Expose
     private String party;
@@ -75,14 +69,6 @@ public class Contact implements Serializable {
     @Expose
     private String website;
 
-    public java.lang.Object getCaucus() {
-        return caucus;
-    }
-
-    public void setCaucus(java.lang.Object caucus) {
-        this.caucus = caucus;
-    }
-
     public List<Integer> getCongressNumbers() {
         return congressNumbers;
     }
@@ -111,7 +97,7 @@ public class Contact implements Serializable {
         return district;
     }
 
-    public void setDistrict(java.lang.Object district) {
+    public void setDistrict(String district) {
         this.district = district;
     }
 
@@ -129,14 +115,6 @@ public class Contact implements Serializable {
 
     public void setExtra(Extra extra) {
         this.extra = extra;
-    }
-
-    public java.lang.Object getLeadershipTitle() {
-        return leadershipTitle;
-    }
-
-    public void setLeadershipTitle(java.lang.Object leadershipTitle) {
-        this.leadershipTitle = leadershipTitle;
     }
 
     public String getParty() {
