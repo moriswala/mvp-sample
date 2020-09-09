@@ -6,10 +6,12 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="16dp"
                                     android:layout_marginLeft="16dp"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginEnd="16dp"
                                     android:layout_marginRight="16dp"
-                                    android:elevation="3dp"
+                                    android:elevation="10dp"
                                     app:cardBackgroundColor="@android:color/white"
-                                    app:cardCornerRadius="2dp">
+                                    app:cardCornerRadius="15dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,9 +25,9 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:elevation="5dp"
-            android:paddingStart="2dp"
-            android:paddingLeft="2dp"
             android:background="@android:color/white"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
             android:layout_gravity="center_vertical"
             app:cardCornerRadius="40dp"
             android:layout_centerHorizontal="true">
@@ -42,7 +44,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="15dp"
             android:orientation="vertical">
 
             <TextView
@@ -68,7 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/darker_gray"
                 tools:text="Just a Movie TitleJust a Movie TitleJust a Movie TitleJust a Movie Title"/>
         </LinearLayout>
     </LinearLayout>

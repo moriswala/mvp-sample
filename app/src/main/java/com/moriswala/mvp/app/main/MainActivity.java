@@ -1,5 +1,6 @@
 package com.moriswala.mvp.app.main;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Handler;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -28,7 +29,7 @@ import butterknife.OnClick;
 import static com.moriswala.mvp.app.contactDetail.ContactDetailActivity.CONTACT;
 
 
-public class MainActivity extends AppCompatActivity implements
+public class MainActivity extends Activity implements
         MainContract.View,
         SwipeRefreshLayout.OnRefreshListener, EndlessScrollListener.ScrollToBottomListener, ContactsAdapter.ItemClickListener {
     private static final String TAG = "Main";
