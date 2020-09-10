@@ -24,6 +24,9 @@
     <string name="email">Email</string>
     <string name="phone">Phone</string>
     <string name="bioguidId">Bio Guide Id</string>
+    <string name="team">Team</string>
+    <string name="go_back">Back</string>
+    <string name="photo">Photo</string>
 
     <plurals name="duration">
         <item quantity="one">%d minute</item>

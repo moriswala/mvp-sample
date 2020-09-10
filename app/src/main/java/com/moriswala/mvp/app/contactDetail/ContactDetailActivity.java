@@ -1,5 +1,6 @@
 package com.moriswala.mvp.app.contactDetail;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,8 +33,8 @@ public class ContactDetailActivity extends AppCompatActivity implements ContactD
 
     @BindView(R.id.container)
     View contentView;
-    @BindView(R.id.imageView)
-    ImageView imageView;
+    @BindView(R.id.detailScreenImage)
+    ImageView detailScreenImage;
     @BindView(R.id.textName)
     TextView textName;
     @BindView(R.id.textLink)
@@ -42,14 +43,12 @@ public class ContactDetailActivity extends AppCompatActivity implements ContactD
     TextView textRole;
     @BindView(R.id.textParty)
     TextView textAdmin;
-    @BindView(R.id.textProduct)
-    TextView textProduct;
     @BindView(R.id.buttonCall)
-    Button buttonCall;
+    androidx.appcompat.widget.AppCompatImageButton buttonCall;
     @BindView(R.id.buttonSMS)
-    Button buttonSMS;
+    androidx.appcompat.widget.AppCompatImageButton buttonSMS;
     @BindView(R.id.buttonEmail)
-    Button buttonEmail;
+    androidx.appcompat.widget.AppCompatImageButton buttonEmail;
     @BindView(R.id.textView)
     View errorView;
     @BindView(R.id.progressBar)
@@ -126,7 +125,7 @@ public class ContactDetailActivity extends AppCompatActivity implements ContactD
         int resourceId = Utils.getImageResourceId(contact);
 
         if (resourceId != -1) {
-            imageView.setImageResource(resourceId);
+            detailScreenImage.setImageResource(resourceId);
         }
         textName.setText(Utils.formateFullName(contact));
         textLink.setText(contact.getPerson().getLink());

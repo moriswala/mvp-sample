@@ -11,7 +11,7 @@ public class Utils {
         String imagePath;
 
         if (contact.getParty() != null && !contact.getParty().isEmpty()) {
-            if(contact.getParty().equals("republican")){
+            if(contact.getParty().equalsIgnoreCase("Republican")){
                 return R.drawable.republican_logo;
             }else{
                 return R.drawable.democrat_logo;

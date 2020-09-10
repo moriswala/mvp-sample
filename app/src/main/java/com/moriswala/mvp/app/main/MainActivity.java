@@ -29,7 +29,7 @@ import butterknife.OnClick;
 import static com.moriswala.mvp.app.contactDetail.ContactDetailActivity.CONTACT;
 
 
-public class MainActivity extends Activity implements
+public class MainActivity extends AppCompatActivity implements
         MainContract.View,
         SwipeRefreshLayout.OnRefreshListener, EndlessScrollListener.ScrollToBottomListener, ContactsAdapter.ItemClickListener {
     private static final String TAG = "Main";
