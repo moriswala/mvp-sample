@@ -177,8 +177,8 @@
                                             android:layout_weight="1">
                                         <ImageButton
                                             android:id="@+id/buttonCall"
-                                            android:layout_width="30dp"
-                                            android:layout_height="30dp"
+                                            android:layout_width="45dp"
+                                            android:layout_height="45dp"
                                             android:layout_margin="20dp"
                                             android:padding="20dp"
                                             android:contentDescription="@string/call"
@@ -192,8 +192,8 @@
                                             android:layout_weight="1">
                                         <ImageButton
                                             android:id="@+id/buttonSMS"
-                                            android:layout_width="30dp"
-                                            android:layout_height="30dp"
+                                            android:layout_width="45dp"
+                                            android:layout_height="45dp"
                                             android:layout_margin="20dp"
                                             android:padding="20dp"
                                             android:background="@drawable/speak"
@@ -206,8 +206,8 @@
                                             android:layout_weight="1">
                                         <ImageButton
                                             android:id="@+id/buttonEmail"
-                                            android:layout_width="30dp"
-                                            android:layout_height="30dp"
+                                            android:layout_width="45dp"
+                                            android:layout_height="45dp"
                                             android:layout_margin="20dp"
                                             android:padding="20dp"
                                             android:background="@drawable/email"
