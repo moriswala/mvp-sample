@@ -31,6 +31,9 @@ import retrofit2.Response;
 
 /**
  * Created by Yakub on 25/02/2019.
+ *
+ * Main Activity(launcher activity) presenter. Presenter is only way to communicate with data repository.
+ * It will take the request from View and route it to appropriate method to fetch the data.
  */
 
 public class MainPresenter implements MainContract.Presenter {
@@ -67,6 +70,12 @@ public class MainPresenter implements MainContract.Presenter {
 //        getContacts(false, page);
     }
 
+    /**
+     * Reactive call to fetch the contacts data from server in first Observable,
+     * then chiaining it with Sorting Observable. Finally getContactssRx() will
+     * return a list of contacts sorted by last name.
+     * @param isRefresh
+     */
     private void getContactsRx(final boolean isRefresh) {
         disposable.add(apiService.getContactsRx()
                 .subscribeOn(Schedulers.io())

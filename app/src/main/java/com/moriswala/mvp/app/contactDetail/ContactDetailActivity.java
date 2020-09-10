@@ -7,9 +7,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.material.imageview.ShapeableImageView;
+import com.google.android.material.shape.CornerFamily;
+import com.google.android.material.shape.Shapeable;
 import com.moriswala.mvp.R;
 import com.moriswala.mvp.api.model.Contact;
 import com.moriswala.mvp.app.App;
@@ -25,6 +29,11 @@ import butterknife.OnClick;
 
 import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
 
+/**
+ * Detail activity acting as Presenter for the Contact detail View.
+ * It will take the use action and send that action to presenter.
+ * Presenter then decide which data should be served to the View.
+ */
 public class ContactDetailActivity extends AppCompatActivity implements ContactDetailContract.View {
     public static final String CONTACT = "contact";
 
@@ -84,12 +93,16 @@ public class ContactDetailActivity extends AppCompatActivity implements ContactD
     @BindView(R.id.bottomButtonLayout)
     View bottomButtonLayout;
 
+    @BindView(R.id.buttonBack)
+    ImageButton buttonBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+//        setContentView(R.layout.activity_contact_detail);
         ButterKnife.bind(this);
+
 
         DaggerContactDetailComponent.builder()
                 .appComponent(App.getAppComponent(getApplication()))
@@ -102,6 +115,7 @@ public class ContactDetailActivity extends AppCompatActivity implements ContactD
             Contact contact = (Contact) extras.getSerializable(CONTACT);
             showContact(contact);
         }
+
     }
 
     @Override
@@ -174,6 +188,16 @@ public class ContactDetailActivity extends AppCompatActivity implements ContactD
     @OnClick(R.id.buttonEmail)
     void ononEmailClick() {
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
+    @OnClick(R.id.buttonBack)
+    void onBackButtonClick() {
+        this.onBackPressed();
     }
 
 }

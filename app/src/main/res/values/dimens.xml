@@ -6,4 +6,5 @@
     <dimen name="app_bar_height">200dp</dimen>
     <dimen name="itemPopularityHeight">30dp</dimen>
     <dimen name="detailPosterHeight">240dp</dimen>
+    <dimen name="radius">50dp</dimen>
 </resources>

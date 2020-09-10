@@ -5,6 +5,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by Yakub on 25/02/2019.
+ *
+ * It's useful for fetching data in pagination, This listener will fetch the next
+ * page once it reaches to the end of current page.
+ *
  */
 
 public class EndlessScrollListener extends RecyclerView.OnScrollListener {

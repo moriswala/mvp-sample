@@ -28,8 +28,11 @@ import butterknife.OnClick;
 
 import static com.moriswala.mvp.app.contactDetail.ContactDetailActivity.CONTACT;
 
-
-public class MainActivity extends AppCompatActivity implements
+/**
+ * Main Activity(Launcher activity) acting as View to the Presenter to send user action to its presenter.
+ * View will pass the user action to Presenter and presenter will decide which data to fetch based on the action sent by the View.
+ */
+public class MainActivity extends Activity implements
         MainContract.View,
         SwipeRefreshLayout.OnRefreshListener, EndlessScrollListener.ScrollToBottomListener, ContactsAdapter.ItemClickListener {
     private static final String TAG = "Main";
@@ -55,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements
         ButterKnife.bind(this);
 
         setupContentView();
+        //Dependency injection for MainActivity View Presenter
         DaggerMainComponent.builder()
                 .appComponent(App.getAppComponent(getApplication()))
                 .mainModule(new MainModule(this))
@@ -62,6 +66,9 @@ public class MainActivity extends AppCompatActivity implements
                 .inject(this);
     }
 
+    /**
+     * Setup a scroll listener to fetch pages data.
+     */
     private void setupContentView() {
         swipeRefreshLayout.setOnRefreshListener(this);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);

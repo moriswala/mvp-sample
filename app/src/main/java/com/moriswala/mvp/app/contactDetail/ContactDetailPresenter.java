@@ -9,6 +9,9 @@ import javax.inject.Inject;
 
 /**
  * Created by Yakub on 25/02/2019.
+ *
+ * Presenter for the Contact detail View. It's the only way to communicate with data repositoy.
+ * It will take the input from View and fetch the data from data repository.
  */
 
 public class ContactDetailPresenter implements ContactDetailContract.Presenter {
